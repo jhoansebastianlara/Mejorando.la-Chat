@@ -11,11 +11,12 @@ a{color:#fff;text-decoration:none;}
 a:hover{text-decoration:underline}
 ::selection{background-color:#29b1ff}
 .field{background:#138fce;border:1px solid rgba(255,255,255,0.3);border-top:0;-webkit-border-radius:3px;border-radius:3px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:inline-block;font-size:15px;margin-top:0;padding:3px;padding-bottom:30px;outline:0;vertical-align:top;width:78%}
-.chat nav{text-align:left;margin:0 5%;font-size:16px;text-transform:uppercase;padding:2px 0;}
+.chat nav{text-align:left;margin:0;font-size:16px;text-transform:uppercase;padding:2px 0;}
 .chat nav a{color:#bbb;margin:0 5px;-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;-o-transition:color .2s ease-out;-ms-transition:color .2s ease-out;transition:color .2s ease-out;}
 .chat nav a.icon-mention{font-size:19px;}
 .chat nav a.icon-mention.new{color:#29afff}
 .chat nav a:hover{text-decoration:none;color:#fff}
+.chat .chatbox{padding:5px;}
 .chat .chatbox .chatform{position:relative;}
 .chat .chatbox .chatform.sending:after{content:" ";position:absolute;top:0;left:0;position:absolute;bottom:0;right:0;background:rgba(61,64,67,0.6) url("/images/website/form-sending.gif") center center no-repeat;z-index:9}
 .chat .chatbox .chatform .publish{background:#29b1ff url("/images/website/submit-esquina.png") top left no-repeat;position:absolute;right:0;bottom:0;padding:5px 20px;font-size:12px;text-transform:uppercase;padding-left:30px;border-bottom-right-radius:3px;}
@@ -26,7 +27,7 @@ a:hover{text-decoration:underline}
 .chat #mentions{display:none;}
 .chat #mentions:empty:before{color:#bbb;text-align:center;display:block;font-size:14px;font-style:italic;content:"Aún no tienes menciones"}
 .chat .messages{position:absolute;overflow-y:scroll;-webkit-overflow-scrolling:touch;top:103px;bottom:24px;position:absolute;right:0;left:0;}
-.chat .messages .message{padding:10px 0;position:relative;overflow:hidden;text-shadow:.5px .5px rgba(0,0,0,0.4);border-left:7px solid transparent;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;-o-transition:background-color .5s ease-out;-ms-transition:background-color .5s ease-out;transition:background-color .5s ease-out;}
+.chat .messages .message{color:#444;padding:10px 0;position:relative;overflow:hidden;text-shadow:.5px .5px rgba(0,0,0,0.4);border-left:7px solid transparent;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;-o-transition:background-color .5s ease-out;-ms-transition:background-color .5s ease-out;transition:background-color .5s ease-out;}
 .chat .messages .message.sameuser{background:#fff;border-left:7px solid #29afff}
 .chat .messages .message.destacado .avatar:after{content:" ";background:url("/images/website/staff.png");width:14px;height:14px;display:block;position:absolute;bottom:1px;right:1px}
 .chat .messages .message.destacado .avatar img{border-color:#fff}
@@ -34,7 +35,7 @@ a:hover{text-decoration:underline}
 .chat .messages .message .content{color:#777;font-size:13px;line-height:15px;margin:0 5px;margin-left:51px}
 .chat .messages .message .avatar{float:left;position:relative;margin:0 10px;}
 .chat .messages .message .avatar img{display:block;border:1px solid rgba(255,255,255,0.2);-webkit-border-radius:50%;border-radius:50%;height:50px !important;width:50px !important}
-.chat .messages .message .user{font-weight:bold}
+.chat .messages .message .user{color:#444;font-weight:bold}
 .chat .messages .message .time{position:absolute;right:25px;top:0;color:#333;-webkit-transition:opacity .2s ease-out;-moz-transition:opacity .2s ease-out;-o-transition:opacity .2s ease-out;-ms-transition:opacity .2s ease-out;transition:opacity .2s ease-out;opacity:0;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);filter:alpha(opacity=0);}
 .chat .messages .message .time small{font-size:12px}
 .chat .messages .message .borrar{position:absolute;top:5px;right:5px;font-size:15px;color:#bbb;}
