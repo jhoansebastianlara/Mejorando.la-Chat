@@ -1,0 +1,776 @@
+@import "../nib"
+
+global-reset()
+
+body
+    background #fff
+    overflow hidden
+
+body
+input
+textarea
+button
+    font-family 'Open Sans'
+    font-size 16px
+    color white
+
+img
+    border 0
+
+a
+    color white
+    text-decoration none
+
+    &:hover
+        text-decoration underline
+
+::selection
+    background-color #29b1ff
+
+.field
+    background rgb(19,143,206)
+    border 1px solid rgba(255,255,255, 0.30)
+    border-top 0
+    border-radius 3px
+    box-sizing border-box
+    display inline-block
+    font-size 15px
+    margin-top 0
+    padding 3px
+    padding-bottom 30px
+    outline 0    
+    vertical-align top
+    width 78%        
+
+/* CHAT */
+.chat 
+    nav 
+      text-align left
+      margin 0 5%
+      font-size 16px
+      text-transform uppercase
+      padding 2px 0
+
+      a
+          color #bbb
+          margin 0 5px
+          transition color .2s ease-out
+
+          &.icon-mention 
+            font-size 19px
+
+            &.new
+              color #29afff
+
+          &:hover
+            text-decoration none
+            color white
+
+
+    .chatbox        
+
+        .chatform
+            position relative
+
+            &.sending:after
+                content " "
+                absolute top left
+                absolute bottom right
+                background rgba(61, 64, 67, 0.6) url(/images/website/form-sending.gif) center center no-repeat
+                z-index 9
+
+            .publish
+                background #29b1ff url(/images/website/submit-esquina.png) top left no-repeat
+                position absolute
+                right 0
+                bottom 0
+                padding 5px 20px
+                font-size 12px
+                text-transform uppercase
+                padding-left 30px
+                border-bottom-right-radius 3px
+
+                span
+                    margin-right 5px
+
+    &.alternate
+      #messages
+        display none
+      #mentions
+        display block
+
+        .borrar 
+          display none !important
+
+    #mentions
+      display none
+
+      &:empty:before
+        color #bbb
+        text-align center
+        display block
+        font-size 14px
+        font-style italic
+        content "Aún no tienes menciones"
+
+    .messages
+        position absolute
+        overflow-y scroll
+        -webkit-overflow-scrolling touch
+        top 103px
+        bottom 24px
+        absolute right left
+
+
+        .message
+            padding 10px 0
+            position relative
+            overflow hidden
+            text-shadow .5px .5px rgba(0, 0, 0, 0.4)
+            border-left 7px solid transparent
+            transition background-color .5s ease-out
+
+            &.sameuser
+              background #fff
+              border-left 7px solid #29afff
+
+            &.destacado
+              .avatar
+                &:after
+                  content " "
+                  background url(/images/website/staff.png)
+                  width 14px
+                  height 14px
+                  display block
+                  absolute bottom 1px right 1px
+
+                img
+                  border-color white
+
+            .mention
+              background #29B1FF
+              border-radius 3px
+              display inline-block
+              margin-top 5px
+              padding 2px
+
+            .content
+              color #777
+              font-size 13px
+              line-height 15px
+              margin 0 5px
+              margin-left 51px
+
+            .avatar
+              float left
+              position relative
+              margin 0 10px
+
+              img 
+                display block
+                border 1px solid rgba(255, 255, 255, 0.2)
+                border-radius 50%
+                height 50px!important
+                width 50px!important
+
+
+            .user
+              font-weight bold
+
+            .time
+              absolute right 25px top 
+              color #333
+              transition opacity .2s ease-out
+              opacity 0
+
+              small
+                font-size 12px
+
+            .borrar
+              absolute top 5px right 5px
+              font-size 15px
+              color #bbb
+
+              &:hover
+                text-decoration none
+                color white
+
+              &.ready
+                background-color red
+                color white
+
+            .icon-undo
+              background rgba(0,0,0,.7)
+              text-align center
+              width 32px
+              height 32px
+              line-height 32px
+              absolute left 10px top 10px
+              transition opacity 0.2 ease-out
+              opacity 0
+
+              &:hover
+                text-decoration none
+
+
+              &:hover
+                opacity 1
+
+            &:hover
+              .time
+                opacity 1
+
+
+/* LOGIN */
+.dialog
+    absolute top left
+    absolute bottom right
+    z-index 9
+    display none
+
+    &.show
+        display -webkit-box
+        display -moz-box
+        display -ms-box
+        display box
+        box-pack center
+        box-align center
+
+    .overlay
+      absolute top left
+      absolute bottom right
+      background rgba(255, 255, 255, 0.5)
+      cursor pointer
+
+    .panel
+      background #3d4043
+      padding 20px 15px
+      box-shadow 3px 3px 0 #272b2e
+      position relative
+
+#login
+      p
+        margin-bottom 15px
+
+      .panel
+        text-transform uppercase
+        font-size 18px
+
+      a
+        display inline-block
+        font-size 15px
+        padding 15px 8px
+        padding-right 55px
+        border 1px solid #5672b4
+        cursor pointer
+        transition border-color .5s ease-out
+        background #3b5998
+        background-position 140px center
+        background-repeat no-repeat
+
+        &:hover
+          text-decoration none
+
+        &.facebook
+          margin-right 10px
+          background-image url(/images/website/fb.png)
+
+          &:hover
+            border-color #8da5ec
+
+        &.twitter
+          background-color #00aee8
+          border-color #49c9ff
+          background-image url(/images/website/tt.png)
+
+          &:hover
+            border-color #9dffff
+    
+#encuesta
+  .panel
+    background-image url(/images/website/encuesta-top.png)
+    background-image-position left top 
+    background-repeat repeat-x
+    padding-top 30px
+    font-size 14px 
+
+    form
+      position relative
+
+      &.sending:after
+        content " "
+        absolute top left
+        absolute bottom right
+        background rgba(61, 64, 67, 0.6) url(/images/website/form-sending.gif) center center no-repeat
+        z-index 9
+
+    .question
+      overflow hidden
+      margin-bottom 10px
+
+      p
+        float left
+
+        &:last-child
+          float right
+          margin-left 30px
+
+        span
+          margin 0 7px
+
+    .public
+      font-size 11px
+      color #b0b1b2
+
+    .comment
+      textarea
+        font-size 14px
+
+    .enviar
+      text-align right
+      margin-top 10px
+
+      button
+        background #333537
+        border 0
+        font-size 14px
+        padding 5px 10px
+        cursor pointer
+        transition background-color .2s ease-out
+        position relative
+        right 10px
+
+        &:after
+          content " "
+          position absolute
+          right -10px
+          border-left 10px solid #333537
+          border-bottom 15px solid transparent
+          border-top 14px solid transparent
+          display block
+          top 0
+          transition border-color .2s ease-out
+
+        &:hover
+          background-color #1e2123
+
+          &:after
+            border-left-color #1e2123
+
+
+/* FOOTER */
+
+footer
+    text-align right
+    font-size 16px
+    text-transform uppercase
+    position absolute
+    padding 2px 0
+    bottom 0
+    left 0 
+    right 0
+
+    a
+        color #bbb
+        margin 0 5px
+
+        &.icon-mention 
+          font-size 19px
+
+        &:hover
+          text-decoration none
+          color white
+
+::-webkit-input-placeholder
+    color white
+    height 10px!important 
+    text-transform uppercase     
+
+.submit
+    background-color rgb(236,86,70) 
+    box-shadow -5px 5px rgb(197,68,54)
+    border 0
+    border-radius 3px
+    color #fff
+    display inline-block
+    font-weight 400
+    height 50px
+    margin-left 2%
+    width 20%
+    text-transform uppercase
+ 
+@media screen and (max-width:458px)
+  #login
+    .panel
+      padding 15px 10px
+      font-size 15px
+
+      p
+        margin-bottom 10px
+
+      a
+        font-size 12px
+        padding 12px 5px
+        background-position 113px center
+        padding-right 50px
+
+        &.facebok
+          margin-right 7px
+
+.emoticon {
+  display: inline-block;
+  width:21px;
+  height:19px;
+  top:4px;
+  position: relative;
+  background:url(/images/website/emoticons.png) left top no-repeat;
+}
+
+.emoticon[title=":)"] {
+  background-position:left top;
+}
+
+.emoticon[title=":8"] {
+  background-position:-23px top;
+}
+
+.emoticon[title=":D"] {
+  background-position:-46px top;
+}
+
+.emoticon[title=":("] {
+  background-position:-87px top;
+}
+
+.emoticon[title=":O"] {
+  background-position:-243px top;
+}
+
+.emoticon[title=":P"] {
+  background-position:-286px top;
+}
+
+.emoticon[title=":cool:"] {
+  background-position:-329px top;
+}
+
+
+.emoticon[title=":'("] {
+  background-position:-438px top;
+}
+
+.emoticon[title=":|"] {
+  background-position:-458px top;
+}
+
+/*
+Animate.css - http://daneden.me/animate
+LICENSED UNDER THE  MIT LICENSE (MIT)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.animated {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -ms-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-moz-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-o-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+  }
+  
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+  }
+  
+  80% {
+    -webkit-transform: translateY(-10px);
+  }
+  
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px);
+  }
+  
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px);
+  }
+  
+  80% {
+    -moz-transform: translateY(-10px);
+  }
+  
+  100% {
+    -moz-transform: translateY(0);
+  }
+}
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px);
+  }
+  
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px);
+  }
+  
+  80% {
+    -o-transform: translateY(-10px);
+  }
+  
+  100% {
+    -o-transform: translateY(0);
+  }
+}
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+  
+  60% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  
+  80% {
+    transform: translateY(-10px);
+  }
+  
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+  }
+  
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+  }
+}
+
+@-moz-keyframes bounceOutUp {
+  0% {
+    -moz-transform: translateY(0);
+  }
+  
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(20px);
+  }
+  
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px);
+  }
+}
+
+@-o-keyframes bounceOutUp {
+  0% {
+    -o-transform: translateY(0);
+  }
+  
+  20% {
+    opacity: 1;
+    -o-transform: translateY(20px);
+  }
+  
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px);
+  }
+}
+
+@keyframes bounceOutUp {
+  0% {
+    transform: translateY(0);
+  }
+  
+  20% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+}
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  -moz-animation-name: bounceOutUp;
+  -o-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../../fonts/icomoon.eot');
+  src:url('../../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/icomoon.svg#icomoon') format('svg'),
+    url('../../fonts/icomoon.woff') format('woff'),
+    url('../../fonts/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-volume-high:before, .icon-volume-mute:before, .icon-blocked:before, .icon-undo:before, .icon-bubble:before, .icon-exit:before, .icon-stats:before, .icon-github:before, .icon-mention:before, .icon-bell:before, .icon-no-bell:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-volume-high:before {
+  content: "\21";
+}
+.icon-volume-mute:before {
+  content: "\22";
+}
+.icon-blocked:before {
+  content: "\23";
+}
+.icon-undo:before {
+  content: "\24";
+}
+.icon-bubble:before {
+  content: "\25";
+}
+.icon-exit:before {
+  content: "\27";
+}
+.icon-stats:before {
+  content: "\29";
+}
+.icon-bell:before {
+  content: "\28";
+}
+.icon-no-bell:before {
+  content: "\26";
+}
+.icon-github:before {
+  content: "\2b";
+}
+.icon-mention:before {
+  content: "@"
+}
