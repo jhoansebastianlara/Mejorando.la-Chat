@@ -20,7 +20,10 @@ userSchema.statics.findOrCreate = function (profile, done) {
   this.findOne({ redId: profile.redId }, function (err, user) {
     if(err) return done(err);
 
-    if(user) return done(null, user);
+    if(user) {
+      console.log(profile);
+      return done(null, user);
+    }
 
     user = new User(profile);
     user.save(done);
