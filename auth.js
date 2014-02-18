@@ -17,8 +17,8 @@ exports.twitter = function(token, tokenSecret, profile, done) {
       redId: profile._json.id_str
     },
     {
-      username:profile.username, 
-      profile._json.profile_image_url_https
+      username: profile.username, 
+      avatar: profile._json.profile_image_url_https
     }, function(err){
       if(err) return done(err);
       console.log("user update");
