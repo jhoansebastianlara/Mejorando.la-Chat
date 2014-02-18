@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     User = mongoose.model('User');
 
 exports.twitter = function(token, tokenSecret, profile, done) {
+  console.log("usuario de twitter "+profile);
   User.findOrCreate({
     username: profile.username,
     avatar: profile._json.profile_image_url_https,
@@ -14,6 +15,7 @@ exports.twitter = function(token, tokenSecret, profile, done) {
 };
 
 exports.facebook = function(accessToken, refreshToken, profile, done) {
+  console.log("usuario de facebook "+profile);
   User.findOrCreate({
     username: profile.username,
     avatar: 'https://graph.facebook.com/'+profile.username+'/picture',
