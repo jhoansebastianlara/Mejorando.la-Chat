@@ -21,7 +21,9 @@ userSchema.statics.findOrCreate = function (profile, done) {
     if(err) return done(err);
 
     if(user) {
-      console.log(profile);
+      user.update({redId: user.Id},{username:profile.username, avatar:profile.avatar}, function(err){
+        if(err) return done(err);
+      });
       return done(null, user);
     }
 
