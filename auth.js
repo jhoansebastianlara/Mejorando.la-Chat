@@ -2,7 +2,6 @@ var mongoose = require('mongoose'),
     User = mongoose.model('User');
 
 exports.twitter = function(token, tokenSecret, profile, done) {
-  console.log("twitter user"+profile);
   User.findOrCreate({
     username: profile.username,
     avatar: profile._json.profile_image_url_https,
@@ -20,13 +19,11 @@ exports.twitter = function(token, tokenSecret, profile, done) {
       username: profile.username, 
       avatar: profile._json.profile_image_url_https
     }, function(err){
-      if(err) return done(err);
-      console.log("user update");
+      if(err) return done(err);      
   });
 };
 
 exports.facebook = function(accessToken, refreshToken, profile, done) {
-  console.log("usuario de facebook "+profile);
   User.findOrCreate({
     username: profile.username,
     avatar: 'https://graph.facebook.com/'+profile.username+'/picture',
@@ -36,6 +33,16 @@ exports.facebook = function(accessToken, refreshToken, profile, done) {
     token: accessToken,
     tokenSecret: refreshToken
   }, done);
+  User.update(
+    {
+      redId: profile.id
+    },
+    {
+      username: profile.username, 
+      avatar: 'https://graph.facebook.com/'+profile.username+'/picture',
+    }, function(err){
+      if(err) return done(err);      
+  });
 };
 
 exports.user = function(id, done) {
