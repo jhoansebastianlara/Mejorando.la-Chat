@@ -21,26 +21,7 @@ userSchema.statics.findOrCreate = function (profile, done) {
   this.findOne({ redId: profile.redId }, function (err, user) {
     if(err) return done(err);
 
-    if(user) {      
-      /*request(user.avatar, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-          console.log("avatar bueno");        
-        }
-        else{
-          console.log("avatar malo :(");
-          if(red=="facebook"){
-
-          }
-          else{
-
-          }          
-        }
-      });
-      user.update({redId: user.Id},{username:profile.username, avatar:profile.avatar}, function(err){
-        if(err) return done(err);
-      });*/
-      return done(null, user);
-    }
+    if(user) return done(null, user);
 
     user = new User(profile);
     user.save(done);

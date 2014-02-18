@@ -17,6 +17,7 @@ exports.twitter = function(token, tokenSecret, profile, done) {
     },
     {
       username: profile.username, 
+      link: 'http://twitter.com/' + profile.username,
       avatar: profile._json.profile_image_url_https
     }, function(err){
       if(err) return done(err);      
@@ -39,6 +40,7 @@ exports.facebook = function(accessToken, refreshToken, profile, done) {
     },
     {
       username: profile.username, 
+      link: profile.profileUrl,
       avatar: 'https://graph.facebook.com/'+profile.username+'/picture',
     }, function(err){
       if(err) return done(err);      
