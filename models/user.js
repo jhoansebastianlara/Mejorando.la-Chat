@@ -22,7 +22,7 @@ userSchema.statics.findOrCreate = function (profile, done) {
     if(err) return done(err);
 
     if(user) {      
-      request(user.avatar, function (error, response, body) {
+      /*request(user.avatar, function (error, response, body) {
         if (!error && response.statusCode == 200) {
           console.log("avatar bueno");        
         }
@@ -36,7 +36,7 @@ userSchema.statics.findOrCreate = function (profile, done) {
           }          
         }
       });
-      /*user.update({redId: user.Id},{username:profile.username, avatar:profile.avatar}, function(err){
+      user.update({redId: user.Id},{username:profile.username, avatar:profile.avatar}, function(err){
         if(err) return done(err);
       });*/
       return done(null, user);
