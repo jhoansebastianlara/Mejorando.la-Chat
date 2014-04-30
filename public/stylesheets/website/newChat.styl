@@ -1,6 +1,8 @@
 gris = #565656
 gris_claro = #D9DADA
 amarillo = #F8C03B
+amarillo_oscuro = #B16828
+verde = #97C95A
 
 ::selection
     background amarillo
@@ -8,13 +10,32 @@ body
     background white
 a
     color gris
+.container-field
+    margin-right 100px
+.submit
+    background amarillo
+    border none
+    border-bottom 5px solid amarillo_oscuro
+    border-radius 5px
+    box-sizing border-box
+    color amarillo_oscuro
+    cursor pointer
+    font-weight bold
+    height 55px
+    outline 0
+    position absolute
+    right 0
+    text-transform uppercase
+    top 0
+    width 90px
 .field
     background white
     border 1px solid gris
     color gris
+    border-bottom-width 2px
+    padding-bottom 27px
     &:focus
         border-color amarillo
-.chat .messages .message 
 .chat 
     .chatbox
         padding 0
@@ -22,6 +43,8 @@ a
     .messages 
         padding-bottom 20px
         top 86px
+        border-top 1px solid gris_claro
+        padding-top 1px
         .message
             color gris
             text-shadow none
@@ -30,13 +53,14 @@ a
                 background gris_claro
                 border-left-color amarillo
             .mention
-                background amarillo
-                color black
+                background verde
+                color white
             .avatar
                 border-radius 50%
                 overflow hidden
             .borrar
-                color black
+                color amarillo
+                text-shadow 2px 1px 0 #000
                 &:hover
                     color black
                 &.ready
