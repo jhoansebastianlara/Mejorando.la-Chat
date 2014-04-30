@@ -1,12 +1,19 @@
+// Mejorandola chat estilos nuevo 
+
 @import "../nib"
+
+gris = #f7f7f7;
+gris-claro = #c7c7c7;
+gris-oscuro = #565656;
+amarillo = #f8c03b;
 
 global-reset()
 
 body
-    background #3D4043
+    background gris
     overflow hidden
+    color gris-oscuro
 
-body
 input
 textarea
 button
@@ -18,7 +25,7 @@ img
     border 0
 
 a
-    color white
+    color gris-oscuro
     text-decoration none
 
     &:hover
@@ -28,8 +35,8 @@ a
     background-color #29b1ff
 
 .field
-    background #515458
-    border 1px solid rgba(255,255,255, 0.30)
+    background white
+    border 1px solid gris-claro
     font-size 15px
     border-radius 3px
     padding 3px
@@ -42,7 +49,7 @@ a
 .chat 
     nav 
       text-align left
-      margin 0 5%
+      margin 0 3%
       font-size 16px
       text-transform uppercase
       padding 2px 0
@@ -64,7 +71,7 @@ a
 
 
     .chatbox
-        padding 20px 5% 0
+        padding 20px 3% 0
 
         .chatform
             position relative
@@ -77,7 +84,7 @@ a
                 z-index 9
 
             .publish
-                background #29b1ff url(/images/website/submit-esquina.png) top left no-repeat
+                background amarillo url(/images/website/submit-esquina.png) top left no-repeat
                 position absolute
                 right 0
                 bottom 0
@@ -125,11 +132,12 @@ a
             overflow hidden
             text-shadow .5px .5px rgba(0, 0, 0, 0.4)
             border-left 7px solid transparent
+            border-bottom 1px solid gris-claro
             transition background-color .5s ease-out
 
             &.sameuser
-              background #2e3032
-              border-left 7px solid #29afff
+              background gris-claro
+              border-left 7px solid amarillo
 
             &.destacado
               .avatar
@@ -142,7 +150,7 @@ a
                   absolute bottom 1px right 1px
 
                 img
-                  border-color white
+                  border-radius 50%
 
             .mention
               background #29B1FF
@@ -750,5 +758,3 @@ you can use the generic selector below, but it's slower:
 .icon-mention:before {
   content: "@"
 }
-
-@import "newChat.styl"
