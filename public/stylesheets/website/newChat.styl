@@ -1,6 +1,9 @@
 gris = #565656
 gris_claro = #D9DADA
+amarillo = #F8C03B
 
+::selection
+    background amarillo
 body
     background white
 a
@@ -8,11 +11,17 @@ a
 .field
     background white
     border 1px solid gris
-
+    color gris
 .chat 
     .messages 
+        padding-right 20px
+        padding-bottom 20px
         .message
             color gris
             text-shadow none
+
             &.sameuser
                 background gris_claro
+                border-left-color amarillo
+            .mention
+                background amarillo
