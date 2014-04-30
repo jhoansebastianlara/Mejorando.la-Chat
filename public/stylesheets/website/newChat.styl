@@ -12,16 +12,32 @@ a
     background white
     border 1px solid gris
     color gris
+    &:focus
+        border-color amarillo
+.chat .messages .message 
 .chat 
+    .chatbox
+        padding 0
+
     .messages 
-        padding-right 20px
         padding-bottom 20px
+        top 86px
         .message
             color gris
             text-shadow none
-
+            padding-right 20px
             &.sameuser
                 background gris_claro
                 border-left-color amarillo
             .mention
                 background amarillo
+                color black
+            .avatar
+                border-radius 50%
+                overflow hidden
+            .borrar
+                color black
+                &:hover
+                    color black
+                &.ready
+                    border-radius 50%

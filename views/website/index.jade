@@ -3,8 +3,10 @@ extends layout
 block content
     .chat
         .chatbox: form.chatform#chatform
-            input(type="text", placeholder="Participa en el chat", maxlength="128").field
-
+            .container-field
+                input(type="text", placeholder="Participa en el chat", maxlength="128").field
+            if user
+                input(type="submit", value="enviar").value
 
         if user
             nav#user-nav
