@@ -1,7 +1,18 @@
 gris = #565656
+gris_claro = #D9DADA
 
 body
-	background white
+    background white
+a
+    color gris
 .field
-	background white
-	border 1px solid gris
+    background white
+    border 1px solid gris
+
+.chat 
+    .messages 
+        .message
+            color gris
+            text-shadow none
+            &.sameuser
+                background gris_claro
