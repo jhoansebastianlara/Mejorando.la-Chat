@@ -3,7 +3,7 @@ extends layout
 block content
     .chat
         .chatbox: form.chatform#chatform
-            .container-field
+            div(class="{user ? 'container-field'}")
                 input(type="text", placeholder="Participa en el chat", maxlength="128").field
             if user
                 input(type="submit", value="enviar").submit
