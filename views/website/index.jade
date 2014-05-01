@@ -13,7 +13,7 @@ block content
                 a(href="#", title="Menciones").icon-mention#mention-btn
                 a(href="#", title="Sonido").icon-volume-high#sound-btn
 
-        div(class=".messages#{user ? ' logged' : ''}", id="messages")
+        div(class="messages#{user ? ' logged' : ''}", id="messages")
             each message in messages
                 div(class="message#{ message.user.admin ? ' destacado' : ''}#{ user && user.username == message.user.username ? ' sameuser' : ''}", id="message-#{message._id}")
                     .avatar: a(href=message.user.link, target="_blank")
