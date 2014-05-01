@@ -11,7 +11,7 @@ block content
         if user
             p.user
                 img(class="avatar", src=user.avatar)
-                user.username
+                span=user.username
 
             nav#user-nav
                 a(href="#", title="Menciones").icon-mention#mention-btn
@@ -54,7 +54,6 @@ block content
                     .actions
                         a(href="#", target="_blank").icon-undo.responder
     footer
-        a(href="https://github.com/dual3nigma/Mejorando.la-Chat", target="_blank", title="En Github").icon-github
         if user
             if user.admin
                 a(href="/admin", target="_blank", title="Estadísticas").icon-stats
