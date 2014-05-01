@@ -9,9 +9,15 @@ block content
                 input(type="submit", value="enviar").submit
 
         if user
+            p.user
+                img(class="avatar" src=user.avatar)
+                user.username
+
             nav#user-nav
                 a(href="#", title="Menciones").icon-mention#mention-btn
                 a(href="#", title="Sonido").icon-volume-high#sound-btn
+                a(href="/salir", title="Salir").icon-exit
+
 
         div(class="messages#{user ? ' logged' : ''}", id="messages")
             each message in messages
