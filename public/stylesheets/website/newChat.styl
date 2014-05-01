@@ -45,13 +45,25 @@ a
     &:focus
         border-color amarillo
 .chat 
-    .nav
+    nav
         float right
+        margin 0
         a
             &:hover
                 color black
+    .user
+        float left
+        .avatar
+            width 30px
+            border-radius 50%
+            display inline-block
+            vertical-align middle
+        span
+            color black
+            margin-left 10px
     .chatbox
         padding 0
+        margin-bottom 10px
         .chatform
             &.sending
                 &:after
@@ -61,7 +73,7 @@ a
         padding-top 1px
         top 55px
         &.logged
-            top 86px
+            top 110px
             border-top 1px solid gris_claro
         .message
             border-bottom 1px solid #EAEAEA
